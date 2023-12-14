@@ -594,7 +594,7 @@ class BaiduSpider(BaseSpider):
                 "https://zhidao.baidu.com/search?lm=0&rn=10&fr=search&pn=%d&word=%s&date=%d"
                 % ((pn - 1) * 10, quote(query), time)
             )
-            code = self._get_response(url, proxies, "gb2312")
+            code = self._get_response(url, proxies)
             # 转化编码
             # source.encoding = "gb2312"
             # code = source.text
