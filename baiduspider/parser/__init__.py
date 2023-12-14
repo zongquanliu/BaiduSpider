@@ -378,7 +378,7 @@ class Parser(BaseSpider):
         # 搜索结果总数
         try:
             total = int(
-                bs.find("div", class_="wgt-picker")
+                bs.find(id="wgt-picker")
                 .find("span", class_="f-lighter")
                 .text.split("共", 1)[-1]
                 .split("条结果", 1)[0]
@@ -391,7 +391,7 @@ class Parser(BaseSpider):
                 "total": 0
             }
         # 所有搜索结果
-        list_ = bs.find("div", class_="list").findAll("dl")
+        list_ = bs.find("div", class_="list-inner").findAll("dl")
         results = []
         for item in list_:
             # 屏蔽企业回答
